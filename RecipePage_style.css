@@ -1,0 +1,17 @@
+header > h1{
+    color:darkred;
+    background-color: floralwhite;
+}
+.ingredients{
+    color:green;
+}
+h2{
+    color:darkred;
+    background-color: floralwhite;
+}
+.steps{
+    color:blue;
+}
+footer{
+    font-style: italic;
+}
