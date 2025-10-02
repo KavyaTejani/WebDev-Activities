@@ -6,7 +6,7 @@
   <title>Kavya's Portfolio</title>
   <link rel="stylesheet" href="./style.css">
   <style>
-    
+
     * {margin:0; padding:0; box-sizing:border-box;}
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -121,6 +121,55 @@
       color:#000;
       box-shadow: 0 0 15px #ff6b6b;
     }
+  
+.floating-objects {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: -1; 
+  pointer-events: none;
+}
+
+.floating-objects span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  animation: floatUp 20s linear infinite;
+}
+
+
+.floating-objects span:nth-child(1) {
+  left: 20%; width: 40px; height: 40px;
+  animation-duration: 25s;
+}
+.floating-objects span:nth-child(2) {
+  left: 50%; width: 25px; height: 25px;
+  animation-duration: 18s;
+}
+.floating-objects span:nth-child(3) {
+  left: 70%; width: 50px; height: 50px;
+  animation-duration: 30s;
+}
+.floating-objects span:nth-child(4) {
+  left: 80%; width: 15px; height: 15px;
+  animation-duration: 22s;
+}
+.floating-objects span:nth-child(5) {
+  left: 35%; width: 60px; height: 60px;
+  animation-duration: 35s;
+}
+
+@keyframes floatUp {
+  0% { bottom: -100px; transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(50px) rotate(180deg); }
+  100% { bottom: 110%; transform: translateX(-50px) rotate(360deg); }
+}
+
 
     @keyframes fadeInUp {
       from {opacity:0; transform:translateY(30px);}
@@ -137,6 +186,7 @@
       .timeline-item {width:90%; left:30px !important;}
     }
   </style>
+  
 </head>
 <body>
   <header>
@@ -148,6 +198,14 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+  <div class="floating-objects">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 
   <section class="hero" id="home">
     <h2>Hello, I'm Kavya</h2>
