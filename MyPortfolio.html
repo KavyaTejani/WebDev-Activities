@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kavya's Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background:#000;
+      color:#f1f1f1;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+    a {text-decoration:none; color:inherit;}
+
+    header {
+      position:fixed; top:0; left:0; width:100%;
+      background:#111; display:flex; justify-content:space-between;
+      align-items:center; padding:15px 50px;
+      z-index:1000; border-bottom:1px solid #222;
+      opacity:0; animation:fadeInDown 1s forwards;
+    }
+    header h1 {color:#ff6b6b; font-size:1.5rem;}
+    nav a {margin:0 15px; font-weight:bold; transition:.3s;}
+    nav a:hover {color:#ff6b6b;}
+
+    .hero {
+      height:100vh; display:flex; flex-direction:column;
+      justify-content:center; align-items:center;
+      text-align:center; padding:20px;
+      opacity:0; animation:fadeInUp 1s forwards 0.5s;
+    }
+    .hero h2 {font-size:2.8rem; margin-bottom:10px;}
+    .hero p {font-size:1.2rem; color:#ccc;}
+    .hero .btn {
+      margin-top:20px; padding:12px 28px; border:2px solid #ff6b6b;
+      color:#ff6b6b; border-radius:30px; transition:.3s, box-shadow 0.3s;
+    }
+    .hero .btn:hover {
+      background:#ff6b6b; color:#000;
+      box-shadow: 0 0 15px #ff6b6b;
+    }
+
+    .about {
+      padding:80px 20px;
+      opacity:0; animation:fadeInUp 1s forwards 1s;
+    }
+    .about h2 { 
+      text-align:center; margin-bottom:50px; 
+      font-size:2rem; color:#ff6b6b; 
+    }
+    .timeline {
+      position:relative; max-width:900px; margin:auto;
+    }
+    .timeline::after {
+      content:''; position:absolute; top:0; bottom:0; left:50%;
+      width:2px; background:#ff6b6b; transform:translateX(-50%);
+    }
+    .timeline-item {
+      padding:20px; background:#111; border-radius:10px;
+      position:relative; width:45%; margin-bottom:40px;
+      opacity:0; animation:fadeInUp 1s forwards;
+    }
+    .timeline-item:nth-child(odd) { left:0; animation-delay:1.2s; }
+    .timeline-item:nth-child(even) { left:55%; animation-delay:1.4s; }
+    .timeline-item h3 { color:#ff6b6b; margin-bottom:10px; }
+
+    .projects {padding:80px 20px; text-align:center; opacity:0; animation:fadeInUp 1s forwards 1.6s;}
+    .projects h2 {color:#ff6b6b; margin-bottom:40px;}
+    .grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card {
+      background:#111; padding:20px; border-radius:12px;
+      transition:.3s, box-shadow 0.3s; border:1px solid #222;
+    }
+    .card:hover {
+      transform:translateY(-8px); border-color:#ff6b6b;
+      box-shadow:0 0 15px #ff6b6b;
+    }
+    .card h3 {margin-bottom:10px; color:#ff6b6b;}
+
+    footer {
+      text-align:center;
+      padding:50px 20px 30px 20px;
+      background:#111;
+      border-top:1px solid #222;
+      opacity:0; animation:fadeInUp 1s forwards 2s;
+    }
+    .footer-content h2 {
+      color:#ff6b6b;
+      margin-bottom:20px;
+      font-size:1.8rem;
+    }
+    .footer-content p {
+      color:#777;
+      margin-bottom:20px;
+    }
+    .footer-buttons {
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+    .footer-btn {
+      padding:10px 20px;
+      border-radius:25px;
+      border:2px solid #ff6b6b;
+      color:#ff6b6b;
+      font-weight:bold;
+      transition:all 0.3s, box-shadow 0.3s;
+    }
+    .footer-btn:hover {
+      background:#ff6b6b;
+      color:#000;
+      box-shadow: 0 0 15px #ff6b6b;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(30px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-30px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    @media(max-width:768px) {
+      header {flex-direction:column;}
+      .timeline::after {left:10px;}
+      .timeline-item {width:90%; left:30px !important;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MyPortfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Hello, I'm Kavya</h2>
+    <p>Student | Problem Solver | Passionate</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Who I Am</h3>
+        <p>Passionate developer with a love for clean design and functional code.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Skills</h3>
+        <p>HTML, CSS, JavaScript, React, Java, Python — constantly learning and improving.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Interests</h3>
+        <p>UI/UX, animations, and building creative projects that solve real problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Project One</h3>
+        <p>A project which I will make --> <a href="#">GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>A project which I will make --> <a href="#">Live Demo</a></p>
+      </div>
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>A project which I will make --> <a href="#">GitHub</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <h2>Contact Me</h2>
+      <p>Let's connect:</p>
+      <div class="footer-buttons">
+        <a href="tejani302007@gmail.com" class="footer-btn">Email</a>
+        <a href="https://github.com/KavyaTejani" class="footer-btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/kavyatejani/" class="footer-btn">LinkedIn</a>
+        <a href="#home" class="footer-btn">Back to Top</a>
+      </div>
+      <p>© 2025 MyPortfolio. Designed by Kavya</p>
+    </div>
+  </footer>
+</body>
+</html>
